@@ -308,3 +308,35 @@ header{
   justify-content: center;
   align-items: center;
 }
+
+.form {
+  font-size: 1.3em;
+  box-shadow: 2px 2px 2px;
+  margin-bottom: 5vh;
+}
+
+.form-div input{
+  font-size: .8em;
+  width: 12vw;
+  height: 5vh;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.buttons{
+  font-size: .8em;
+font-weight:bold;
+  background-color: black;
+  color: white;
+  padding: 16px 32px;
+  margin: 4px 2px;
+
+}
+
+.buttons:hover{
+  cursor: pointer;
+}
+
+.hidden{
+  display: none;
+}
