@@ -89,9 +89,11 @@ class Form extends Component {
                         <input type = 'text' name = 'weight' onChange = { this.handleChange } /> 
                     </div> 
                 </form> 
+                <div className="button-div">
                     <button type = 'text' name = 'start' onClick = { this.onStartClick } /> 
                     <button type = 'text' name = 'end' onClick = { this.onEndClick } /> 
                     <button type = 'text' name = 'drinks' onClick = { this.onDrinksClick } /> 
+                </div>
             </div>
         )
     }
