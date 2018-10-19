@@ -12,7 +12,8 @@ class Form extends Component {
             start: '',
             end: '',
             drinks: ''
-        }
+        },
+        toggle: false
     }
 
     handleChange = (event) => {
@@ -30,17 +31,19 @@ class Form extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        const body = JSON.stringify(this.state.post)
+        // const body = JSON.stringify(this.state.post)
 
-        fetch('https://bac-to-sober-be.herokuapp.com/drinker/1', {
-                method: 'PUT',
-                headers: {
-                    "content-type": "application/json"
-                },
-                body: body
-            })
-            .then(res => res.status = 201 ? console.log('submitted') : console.log('not working'))
-            event.target.reset()
+        // fetch('https://bac-to-sober-be.herokuapp.com/drinker/1', {
+        //         method: 'PUT',
+        //         headers: {
+        //             "content-type": "application/json"
+        //         },
+        //         body: body
+        //     })
+          this.setState({toggle:!this.state.toggle})
+          
+        //     .then(res => res.status = 201 ? console.log('submitted') : console.log('not working'))
+        //     event.target.reset()
     }
 
     onStartClick = (event) => {
@@ -79,7 +82,7 @@ class Form extends Component {
     render() {
         return ( 
             <div className = 'form-container' >
-                <form className = 'form' onSubmit = { this.handleSubmit } >
+                <form className = {this.state.toggle ? "form hidden" : "form"} onSubmit = { this.handleSubmit } >
                     <div className = 'form-div' >
                         <label htmlFor = 'name' > Name: </label> 
                         <input type = 'text' name = 'name' onChange = { this.handleChange } /> 
@@ -88,11 +91,15 @@ class Form extends Component {
                         <label htmlFor = 'weight' > Weight: </label> 
                         <input type = 'text' name = 'weight' onChange = { this.handleChange } /> 
                     </div> 
+                    <div className = 'form-div' >
+                        <input type = 'submit' /> 
+                    </div> 
                 </form> 
+
                 <div className="button-div">
-                    <button type = 'text' name = 'start' onClick = { this.onStartClick } /> 
-                    <button type = 'text' name = 'end' onClick = { this.onEndClick } /> 
-                    <button type = 'text' name = 'drinks' onClick = { this.onDrinksClick } /> 
+                    <button className= {this.state.toggle ? "buttons hidden" : "buttons"} type = 'text' name = 'start'  onClick = { this.onStartClick }>Start</button> 
+                    <button className="buttons" type = 'text' name = 'end' onClick = { this.onEndClick }>End</button>  
+                    <button className="buttons" type = 'text' name = 'drinks' onClick = { this.onDrinksClick }>Add a Drink!</button>  
                 </div>
             </div>
         )

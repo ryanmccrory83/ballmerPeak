@@ -7,7 +7,7 @@ class Header extends Component {
     return (
         <header>
           <h1>
-            B.A.C 2 Sober
+            B.A.C. 2 Sober
           </h1>
         </header>
       
