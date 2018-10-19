@@ -13,6 +13,7 @@ class Page extends Component {
               drinker = <h2>Name: {this.props.drinker[0].name}</h2>
               weight = <h2>Weight: {this.props.drinker[0].weight}</h2>
               drinks = <h2>Drinks: {this.props.drinker[0].drinks}</h2>
+              
 
             }
     return (
@@ -20,7 +21,7 @@ class Page extends Component {
             {drinker}
             {weight}
             {drinks}
-          {/* <Scale drinks={this.props.drinker[0].drinks} /> */}
+          <Scale drinks={drinks} />
         </div>
     );
   }
