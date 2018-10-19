@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ProgressBar from './ProgressBar';
+
 
 import '../App.css';
 
@@ -6,9 +8,7 @@ class Page extends Component {
   render() {
     return (
         <div>
-          <h2>
-            {this.props.drinks}
-          </h2>
+            <ProgressBar drinks={this.props.drinks} />
         </div>
     );
   }
